@@ -49,7 +49,7 @@ const HeroSlider = () => {
                     SOCH
                   </h1>
                   <h2 className="text-2xl md:text-3xl text-white font-medium">
-                    “Kuch Kar Deekhane Ke”
+                    “Kuch Kar Dikhane Ki”
                   </h2>
                 </div>
                 <div className="mb-12">
