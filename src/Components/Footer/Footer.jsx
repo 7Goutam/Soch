@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Instagram, Mail, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,9 +7,13 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1 */}
         <div>
-          <h3 className="text-2xl font-bold text-[#E6EF3A] mb-4">Soch</h3>
+          <img
+            src="/images/logo.png"
+            alt="SOCH"
+            className="h-12 mb-4 drop-shadow-[0_0_8px_#E6EF3A]"
+          />
           <p className="text-sm leading-relaxed">
-            Soch: Kuch Kar Dikhane Ke is the social initiative club of JECRC Foundation, focused on bringing change through compassion and action.
+            <strong>Soch: Kuch Kar Dikhane Ke</strong> is the social initiative club of JECRC Foundation, focused on bringing change through compassion and action.
           </p>
         </div>
 
@@ -37,12 +41,26 @@ const Footer = () => {
               <Mail size={18} className="text-[#E6EF3A]" />
               sochclub@jecrc.ac.in
             </li>
-            <li className="flex gap-4 mt-4">
-              <a href="#" className="hover:text-[#E6EF3A]">
-                <Facebook />
+            <li className="flex items-center gap-2">
+              <Phone size={18} className="text-[#E6EF3A]" />
+             <div className=" flex flex-col">
+             Gagan : 8888888888
+             </div>
+             
+            </li>
+            <li className="flex gap-4 mt-4 text-[#E6EF3A]">
+              <a href="#" aria-label="Facebook" className="hover:text-white">
+                <Twitter />
               </a>
-              <a href="#" className="hover:text-[#E6EF3A]">
+              <a href="#" aria-label="Instagram" className="hover:text-white">
                 <Instagram />
+              </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="hover:text-white"
+              >
+                <Linkedin />
               </a>
             </li>
           </ul>

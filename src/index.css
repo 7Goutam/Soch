@@ -1,1 +1,15 @@
 @import "tailwindcss";
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: #E6EF3A; /* ✅ Yellow arrow buttons */
+}
+
+.custom-swiper .swiper-pagination-bullet {
+  background: #ccc; /* Light gray inactive */
+  opacity: 0.6;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background: #E6EF3A; /* ✅ Yellow active dot */
+  opacity: 1;
+}
