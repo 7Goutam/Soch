@@ -4,6 +4,7 @@ import AboutUs from './Components/Impact/Impact'
 import Footer from './Components/Footer/Footer'
 import HeroSection from './Components/Hero/Hero'
 import Gallery from './Components/Gallery/Gallery'
+import Initiatives from './Components/Initiatives/Initiatives'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar/>
       <HeroSection/>
       <AboutUs/>
+      <Initiatives />
       <Gallery/>
       <Footer/>
 
