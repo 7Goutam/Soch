@@ -21,12 +21,12 @@ const GalleryPage = () => {
   const reels = [
     {
       src: "/reels/reel1.mp4",
-      title: "Blood Donation Awareness",
-      subtitle: "Step Up, Save Lives",
+      title: "Cleanness Awareness",
+      subtitle: "Step Up, Grow plants",
     },
     {
       src: "/reels/reel2.mp4",
-      title: "Aashayein Initiative",
+      title: "Vastra Samman",
       subtitle: "Making a Difference",
     },
     {
