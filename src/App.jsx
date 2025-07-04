@@ -6,8 +6,8 @@ import Footer from './Components/Footer/Footer';
 import HeroSection from './Components/Hero/Hero';
 import AboutUs from './Components/Impact/Impact';
 import Gallery from './Components/Gallery/Gallery';
-import Initiatives from './Components/Initiatives/Initiatives';
-import GalleryPage from './Components/Pages/GalleryDetails'; // detailed gallery page
+import Initiatives from './Components/Initiatives/Initiatives'; 
+import GalleryPage from './Pages/GalleryDetails';
 
 const Home = () => (
   <>
@@ -25,7 +25,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/gallery" element={<GalleryPage/>} />
       </Routes>
 
       <Footer />
