@@ -19,7 +19,8 @@
     "react-router-dom": "^7.6.3",
     "react-scroll": "^1.9.3",
     "swiper": "^11.2.10",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "yet-another-react-lightbox": "^3.24.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

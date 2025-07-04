@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -69,24 +70,26 @@ const GalleryCarousel = () => {
         </div>
 
        <div className="flex justify-end">
-       <button className="mt-10 bg-[#E6EF3A] text-black px-6 py-3 rounded-lg hover:bg-yellow-400 font-semibold shadow-lg transition-all flex gap-2">
-          View Full Gallery
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            {/* ✅ Gallery view icon */}
-            <path d="M15 3h6v6" />
-            <path d="M10 14L21 3" />
-            <path d="M21 21H3V3" />
-          </svg>
-        </button>
+       <Link to="/Gallery">
+  <button className="mt-10 bg-[#E6EF3A] text-black px-6 py-3 rounded-lg hover:bg-yellow-400 font-semibold shadow-lg transition-all flex gap-2">
+    View Full Gallery
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-5 h-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M15 3h6v6" />
+      <path d="M10 14L21 3" />
+      <path d="M21 21H3V3" />
+    </svg>
+  </button>
+</Link>
+
        </div>
       </div>
     </section>

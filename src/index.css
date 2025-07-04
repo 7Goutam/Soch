@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 .custom-swiper .swiper-button-next,
 .custom-swiper .swiper-button-prev {
   color: #E6EF3A; /* ✅ Yellow arrow buttons */
