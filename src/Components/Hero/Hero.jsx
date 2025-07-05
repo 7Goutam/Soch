@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
@@ -24,6 +25,7 @@ const slides = [
 ];
 
 const HeroSlider = () => {
+  const navigate = useNavigate();
   return (
     <section id="home" className="relative h-132 w-full">
       <Swiper
@@ -57,7 +59,9 @@ const HeroSlider = () => {
                     {slide.caption}
                   </p>
                 </div>
-                <button className="bg-[#E6EF3A] hover:bg-[#cdd933] text-black px-6 py-3 rounded-xl font-semibold shadow-md transition">
+                <button 
+                onClick={() => navigate("/join-us")}
+                className="bg-[#E6EF3A] hover:bg-[#cdd933] text-black px-6 py-3 rounded-xl font-semibold shadow-md transition">
                   Join Us
                 </button>
               </div>

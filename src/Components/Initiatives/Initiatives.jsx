@@ -49,11 +49,11 @@ const Initiatives = () => {
   };
 
   return (
-    <div id="initiatives" className="bg-gray-900 py-12 px-4">
+    <div id="initiatives" className="bg-gradient-to-r from-[#FFF9DB] to-[#EDEDED] py-12 px-4">
       {/* Heading Section */}
-      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
-        Our Initiatives
-      </h2>
+      <h2 className="text-4xl text-center md:text-5xl font-bold mb-12">
+          Our <span className="text-[#E6EF3A]">Initiatives</span>
+        </h2>
       {/* Scrolling Section */}
       <div className="flex justify-center items-center">
         {/* Outer container to center carousel */}
@@ -62,7 +62,7 @@ const Initiatives = () => {
           {events.map((event, index) => (
             <div
               key={index}
-              className={`absolute transition-all duration-700 ease-in-out transform w-64 sm:w-72 md:w-80 h-full bg-white rounded-xl shadow-xl overflow-hidden ${getClass(
+              className={`absolute transition-all duration-700 ease-in-out transform w-64 sm:w-72 md:w-80 h-full bg-black rounded-xl shadow-xl overflow-hidden ${getClass(
                 index
               )}`}
             >
@@ -72,10 +72,10 @@ const Initiatives = () => {
                 className="w-full h-48 sm:h-56 object-cover"
               />
               <div className="p-4 text-center">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800">
+                <h3 className="text-lg sm:text-xl font-bold text-white">
                   {event.name}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-sm sm:text-base text-gray-300">
                   {event.description}
                 </p>
               </div>

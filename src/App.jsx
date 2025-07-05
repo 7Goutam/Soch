@@ -9,6 +9,7 @@ import Gallery from './Components/Gallery/Gallery';
 import Initiatives from './Components/Initiatives/Initiatives'; 
 import GalleryPage from './Pages/GalleryDetails';
 import ScrollToTop from './Components/ScrollToTop';
+import JoinUsForm from './Components/JoinUsForm/JoinUsForm';
 
 const Home = () => (
   <>
@@ -28,6 +29,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<GalleryPage/>} />
+        <Route path="/join-us" element={<JoinUsForm/>} />
+
       </Routes>
 
       <Footer />
