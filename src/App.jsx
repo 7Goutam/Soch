@@ -8,6 +8,7 @@ import AboutUs from './Components/Impact/Impact';
 import Gallery from './Components/Gallery/Gallery';
 import Initiatives from './Components/Initiatives/Initiatives'; 
 import GalleryPage from './Pages/GalleryDetails';
+import ScrollToTop from './Components/ScrollToTop';
 
 const Home = () => (
   <>
@@ -21,6 +22,7 @@ const Home = () => (
 const App = () => {
   return (
     <Router>
+      <ScrollToTop/>
       <Navbar />
 
       <Routes>
