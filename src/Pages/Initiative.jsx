@@ -1,5 +1,5 @@
 import React from "react";
-import { useFadeOnScroll } from "./FadeonScroll";
+import { useFadeOnScroll } from "../Components/FadeonScroll";
 
 // const FadingBlock = ({ children }) => {
 //   const { ref, fadeClass } = useFadeOnScroll();
