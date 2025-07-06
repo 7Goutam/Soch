@@ -94,3 +94,17 @@
     animation: var(--animate-fadeOut);
   }
 }
+/* Yellow color for navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #E6EF3A !important;
+}
+
+/* Gray by default, yellow when active */
+.swiper-pagination-bullet {
+  background-color: #d1d5db !important; /* Tailwind gray-300 */
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #E6EF3A !important;
+}

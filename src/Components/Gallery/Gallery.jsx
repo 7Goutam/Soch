@@ -41,14 +41,16 @@ const GalleryCarousel = () => {
         </p>
 
         <div className="rounded-xl overflow-hidden shadow-xl bg-[#0A0A0A]"> {/* ✅ Darker background behind Swiper */}
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 2000 }}
-            loop
-            className="rounded-xl custom-swiper"
-          >
+        <Swiper
+  modules={[Navigation, Pagination, Autoplay]}
+  navigation
+  pagination={{ clickable: true }}
+  autoplay={{ delay: 2000, disableOnInteraction: false }}
+  loop
+  speed={800}
+  className="rounded-xl custom-swiper"
+>
+
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="relative">
