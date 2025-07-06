@@ -10,7 +10,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", to: "/" },
     { name: "About", to: "about" },
-    { name: "Initiatives", to: "initiatives" },
+    { name: "Initiatives", to: "/initiative", isRoute: true },
     { name: "Events", to: "events" },
     { name: "Gallery", to: "/gallery", isRoute: true },  // ✅ now a route
     { name: "Join Us", to: "/join-us", isRoute: true },
