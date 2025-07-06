@@ -1,16 +1,151 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev { */
+/* color: #E6EF3A; ✅ Yellow arrow buttons */
+/* } */
 
+/* .custom-swiper .swiper-pagination-bullet {
+  background: #ccc; Light gray inactive
+  opacity: 0.6;
+} */
+
+/* .custom-swiper .swiper-pagination-bullet-active {
+  background: #E6EF3A; ✅ Yellow active dot
+  opacity: 1;
+} */
+
+/* @import "tailwindcss";
+
+Theme customizations
+@theme {
+  --color-swiper-yellow: #E6EF3A;
+
+  Custom animation
+  --animate-fadeIn: fadeIn 5s ease-out forwards;
+}
+
+Custom keyframes using @keyframes
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+Swiper custom styles
 .custom-swiper .swiper-button-next,
 .custom-swiper .swiper-button-prev {
-  color: #E6EF3A; /* ✅ Yellow arrow buttons */
+  color: var(--color-swiper-yellow); ✅ Yellow arrow buttons
 }
 
 .custom-swiper .swiper-pagination-bullet {
-  background: #ccc; /* Light gray inactive */
+  background: #ccc; Light gray inactive
   opacity: 0.6;
 }
 
 .custom-swiper .swiper-pagination-bullet-active {
-  background: #E6EF3A; /* ✅ Yellow active dot */
+  background: var(--color-swiper-yellow); ✅ Yellow active dot
   opacity: 1;
+}
+
+Optional: Utility class for fadeIn animation
+@layer utilities {
+  .animate-fadeIn {
+    animation: var(--animate-fadeIn);
+  }
+} */
+
+@import "tailwindcss";
+
+/* Theme customizations */
+@theme {
+  /* Animations */
+  /* --animate-fadeIn: fadeIn 1s ease-out forwards; */
+  --animate-slideIn: slideIn 1.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-zoomIn: zoomIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-wiggle: wiggle 0.5s ease-in-out infinite;
+  /* Combined fade and slide-in animation */
+  --animate-fadeSlideIn: fadeSlideIn 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+  --animate-fadeIn: fadeIn 1s ease-out forwards;
+  --animate-fadeOut: fadeOut 1s ease-out forwards;
+
+  /* Keyframes */
+  /* @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  } */
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+    /* Keyframes */
+  @keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes fadeOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}
+
+/* Optional: utility classes for each animation */
+@layer utilities {
+  /* .animate-fadeIn {
+    animation: var(--animate-fadeIn);
+  } */
+  .animate-slideIn {
+    animation: var(--animate-slideIn);
+  }
+  .animate-zoomIn {
+    animation: var(--animate-zoomIn);
+  }
+  .animate-wiggle {
+    animation: var(--animate-wiggle);
+  }
+  .animate-fadeSlideIn {
+    animation: var(--animate-fadeSlideIn);
+  }
+   .animate-fadeIn {
+    animation: var(--animate-fadeIn);
+  }
+  .animate-fadeOut {
+    animation: var(--animate-fadeOut);
+  }
 }
