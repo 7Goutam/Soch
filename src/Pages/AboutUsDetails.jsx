@@ -4,9 +4,6 @@ import AboutUsComponent from "../Components/AboutUS";
 const AboutUsDetails = () => {
   return (
     <>
-      {/* <AboutUsComponent />
-      <AboutUsComponent /> */}
-
       <AboutUsComponent
         title="Who We Are"
         description="We are a team of passionate individuals working to create meaningful change through tech and social impact."
