@@ -18,6 +18,7 @@ const Home = () => (
     <HeroSection />
     <AboutUs />
     <Initiatives />
+    <AboutUsDetails />
     <Gallery />
   </>
 );
@@ -30,6 +31,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/aboutUs" element={<AboutUsDetails />} />
         <Route path="/initiative" element={<InitiativeDetails/>} />
         <Route path="/join-us" element={<JoinUsForm />} />
       </Routes>
