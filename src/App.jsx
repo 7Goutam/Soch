@@ -9,7 +9,9 @@ import Initiatives from './Components/Initiatives/Initiatives';
 import GalleryPage from './Pages/GalleryDetails';
 import ScrollToTop from './Components/ScrollToTop';
 import JoinUsForm from './Components/JoinUsForm/JoinUsForm';
-import Initiative from './Pages/Initiative'; // ✅ Keep this from incoming/main
+import InitiativeDetails from './Pages/Initiative'; // ✅ Keep this from incoming/main
+
+import AboutUsDetails from './Pages/AboutUsDetails';
 
 const Home = () => (
   <>
@@ -28,7 +30,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/initiative" element={<Initiative/>} />
+        <Route path="/initiative" element={<InitiativeDetails/>} />
         <Route path="/join-us" element={<JoinUsForm />} />
       </Routes>
       <Footer />
