@@ -9,7 +9,7 @@ import Initiatives from './Components/Initiatives/Initiatives';
 import GalleryPage from './Pages/GalleryDetails';
 import ScrollToTop from './Components/ScrollToTop';
 import JoinUsForm from './Components/JoinUsForm/JoinUsForm';
-import InitiativeDetails from './Pages/Initiative'; // ✅ Keep this from incoming/main
+import InitiativeDetails from './Pages/InitiativeDetails'; // ✅ Keep this from incoming/main
 
 import AboutUsDetails from './Pages/AboutUsDetails';
 
