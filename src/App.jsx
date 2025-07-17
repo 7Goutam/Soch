@@ -10,12 +10,15 @@ import GalleryPage from './Pages/GalleryDetails';
 import ScrollToTop from './Components/ScrollToTop';
 import JoinUsForm from './Components/JoinUsForm/JoinUsForm';
 import InitiativeDetails from './Pages/InitiativeDetails'; // ✅ Keep this from incoming/main
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import AboutUsDetails from './Pages/AboutUsDetails';
 
 const Home = () => (
   <>
     <HeroSection />
+    <ToastContainer />
     <AboutUs />
     <Initiatives />
     <AboutUsDetails />

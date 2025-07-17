@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const slides = [
   {
@@ -25,6 +27,13 @@ const slides = [
 ];
 
 const HeroSlider = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.message) {
+      toast.success(location.state.message, { autoClose: 3000 });
+    }
+  }, [location.state]);
   const navigate = useNavigate();
   return (
     <section id="home" className="relative h-132 w-full">
