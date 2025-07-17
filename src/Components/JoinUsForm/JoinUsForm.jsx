@@ -11,32 +11,44 @@ const JoinUsForm = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
-      email: "",
       phone: "",
+      email: "",
       interest: "",
       message: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Name is required"),
+      phone: Yup.string().required("Phone is required"),
       email: Yup.string().email("Invalid email").required("Email is required"),
-      phone: Yup.string()
-        .matches(/^[0-9]{10}$/, "Phone must be 10 digits")
-        .required("Phone number is required"),
-      interest: Yup.string().required("Select your interest"),
+      interest: Yup.string().required("Select an interest"),
       message: Yup.string(),
     }),
-    onSubmit: (values) => {
-      console.log("Form submitted:", values);
+    onSubmit: async (values) => {
+      const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdqAtoAYzFRrOwW4nkaDGmK0MU8ZWHRtGjipXsc6i3lit-abQ/formResponse";
 
-      // ✅ Optionally show toast here too
-      toast.success("Form submitted! Redirecting to home...", {
-        autoClose: 1500,
-      });
+      const formData = new URLSearchParams();
+      formData.append("entry.1090694389", values.name);
+      formData.append("entry.806102975", values.phone);
+      formData.append("entry.2024219940", values.email);
+      formData.append("entry.425683528", values.interest);
+      formData.append("entry.1564792835", values.message);
 
-      // ✅ Redirect with message to homepage
-      setTimeout(() => {
+      try {
+        const response = await fetch(formUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: formData.toString(),
+        });
+        setTimeout(() => {
         navigate("/", { state: { message: "🎉 Thank you for joining! We'll be in touch soon." } });
       }, 1500);
+      } catch (error) {
+        toast.error("❌ Something went wrong!");
+        console.error("Submit error:", error);
+      }
     },
   });
 
@@ -44,19 +56,26 @@ const JoinUsForm = () => {
     <div className="bg-[#FFFCEB] py-16 px-4">
       <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
         <h2 className="text-3xl font-bold text-center text-[#E6EF3A] mb-6">Join Us</h2>
-
-        <form onSubmit={formik.handleSubmit} className="space-y-6">
+        <form onSubmit={formik.handleSubmit} className="space-y-5">
           <input
             type="text"
             name="name"
             placeholder="Full Name"
             value={formik.values.name}
             onChange={formik.handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           />
-          {formik.touched.name && formik.errors.name && (
-            <p className="text-red-500 text-sm">{formik.errors.name}</p>
-          )}
+          {formik.errors.name && <p className="text-red-600 text-sm">{formik.errors.name}</p>}
+
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            value={formik.values.phone}
+            onChange={formik.handleChange}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          />
+          {formik.errors.phone && <p className="text-red-600 text-sm">{formik.errors.phone}</p>}
 
           <input
             type="email"
@@ -64,47 +83,30 @@ const JoinUsForm = () => {
             placeholder="Email Address"
             value={formik.values.email}
             onChange={formik.handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           />
-          {formik.touched.email && formik.errors.email && (
-            <p className="text-red-500 text-sm">{formik.errors.email}</p>
-          )}
-
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            value={formik.values.phone}
-            onChange={formik.handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
-          />
-          {formik.touched.phone && formik.errors.phone && (
-            <p className="text-red-500 text-sm">{formik.errors.phone}</p>
-          )}
+          {formik.errors.email && <p className="text-red-600 text-sm">{formik.errors.email}</p>}
 
           <select
             name="interest"
             value={formik.values.interest}
             onChange={formik.handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           >
             <option value="">Select Interest</option>
-            <option value="volunteering">Volunteering</option>
-            <option value="event management">Event Management</option>
-            <option value="media & content">Media & Content</option>
-            <option value="outreach">Outreach</option>
+            <option value="Volunteering">Volunteering</option>
+            <option value="Event Management">Event Management</option>
+            <option value="Media & Content">Media & Content</option>
+            <option value="Outreach">Outreach</option>
           </select>
-          {formik.touched.interest && formik.errors.interest && (
-            <p className="text-red-500 text-sm">{formik.errors.interest}</p>
-          )}
+          {formik.errors.interest && <p className="text-red-600 text-sm">{formik.errors.interest}</p>}
 
           <textarea
             name="message"
             placeholder="Why do you want to join us?"
-            rows="4"
             value={formik.values.message}
             onChange={formik.handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
           />
 
           <button
